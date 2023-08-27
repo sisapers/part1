@@ -19,10 +19,15 @@ jobs:
   job2:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          repository: sisapers/part1
       - name: Print Files in Repo
         run: ls -1
       - name: Run test.sh
-        run: bash ./test.sh
+        run: bash test.sh
+  
 
   job3:
     runs-on: ubuntu-latest
