@@ -13,9 +13,9 @@ jobs:
         run: echo "Hello"
       - name: Print Ubuntu Version
         run: echo "Ubuntu Version: ${{ matrix.os }}"
-        strategy:
+        env:
           matrix:
-            os: [ubuntu-latest]
+            os: ubuntu-latest
       - name: Print Commit SHA
         run: echo "Commit SHA: ${{ github.sha }}"
 
@@ -25,7 +25,9 @@ jobs:
       - name: Print Files in Repo
         run: ls -1
       - name: Run test.sh
-        run: bash ${{ github.workspace }}/test.sh
+        run: |
+          chmod +x ${{ github.workspace }}/test.sh
+          bash ${{ github.workspace }}/test.sh
 
   job3:
     runs-on: ubuntu-latest
