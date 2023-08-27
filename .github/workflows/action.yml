@@ -12,10 +12,7 @@ jobs:
       - name: Print Hello
         run: echo "Hello"
       - name: Print Ubuntu Version
-        run: echo "Ubuntu Version: ${{ matrix.os }}"
-        env:
-          matrix:
-            os: ubuntu-latest
+        run: echo "Ubuntu Version: $(lsb_release -r -s)"
       - name: Print Commit SHA
         run: echo "Commit SHA: ${{ github.sha }}"
 
