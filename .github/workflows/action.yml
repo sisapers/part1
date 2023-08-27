@@ -8,14 +8,6 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: Print First Name
-        run: echo "First Name: $FIRST_NAME"
-        env:
-          FIRST_NAME: John
-      - name: Print Last Name
-        run: echo "Last Name: $LAST_NAME"
-        env:
-          LAST_NAME: Doe
       - name: Print Phone Number
         run: echo "Phone Number: $PHONE_NUMBER"
         env:
