@@ -1,6 +1,10 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
+name: Custom Actions
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -11,3 +15,27 @@ jobs:
         run: echo "Ubuntu Version $(lsb_release -r -s)"
       - name: Print Commit SHA
         run: echo "Commit SHA ${{ github.sha }}"
+
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Files in Repo
+        run: ls -1
+      - name: Run test.sh
+        run: bash ${{ github.workspace }}/test.sh
+
+  job3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print First Name
+        run: echo "First Name $FIRST_NAME"
+        env:
+          FIRST_NAME: John
+      - name: Print Last Name
+        run: echo "Last Name $LAST_NAME"
+        env:
+          LAST_NAME: Doe
+      - name: Print Phone Number
+        run: echo "Phone Number $PHONE_NUMBER"
+        env:
+          PHONE_NUMBER: ${{ secrets.PHONE_NUMBER }}
