@@ -12,9 +12,9 @@ jobs:
       - name: Print Hello
         run: echo "Hello"
       - name: Print Ubuntu Version
-        run: echo "Ubuntu Version: $(lsb_release -r -s)"
+        run: echo "Ubuntu Version: \$(lsb_release -r -s)"
       - name: Print Commit SHA
-        run: echo "Commit SHA: ${{ github.sha }}"
+        run: echo "Commit SHA: \${{ github.sha }}"
 
   job2:
     runs-on: ubuntu-latest
@@ -28,14 +28,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print First Name
-        run: echo "First Name: $FIRST_NAME"
+        run: echo "First Name: \${FIRST_NAME}"
         env:
           FIRST_NAME: John
       - name: Print Last Name
-        run: echo "Last Name: $LAST_NAME"
+        run: echo "Last Name: \${LAST_NAME}"
         env:
           LAST_NAME: Doe
       - name: Print Phone Number
-        run: echo "Phone Number: $PHONE_NUMBER"
+        run: echo "Phone Number: \${PHONE_NUMBER}"
         env:
-          PHONE_NUMBER: ${{ secrets.PHONE_NUMBER }}
+          PHONE_NUMBER: \${{ secrets.PHONE_NUMBER }}
