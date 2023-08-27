@@ -22,7 +22,7 @@ jobs:
       - name: Print Files in Repo
         run: ls -1
       - name: Run test.sh
-        run: bash ${{ github.workspace }}/test.sh
+        run: bash ./test.sh
 
   job3:
     runs-on: ubuntu-latest
