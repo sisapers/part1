@@ -4,11 +4,10 @@ on:
   push:
     branches:
       - main
+      
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
       - name: Print Phone Number
-        run: echo "Phone Number: $PHONE_NUMBER"
-        env:
-          PHONE_NUMBER: ${{ secrets.PHONE_NUMBER }}
+        run: echo "Phone Number: ${{ secrets.PHONE_NUMBER }}"
