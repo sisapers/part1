@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 one more line from local
+=======
+one more line from Remote Repo
+>>>>>>> 253566f1b8bf2cde7b08534f214e091398400045
